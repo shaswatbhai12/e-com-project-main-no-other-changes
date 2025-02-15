@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -109,8 +111,13 @@ STATICFILES_DIRS = [
 
 # Whitenoise Configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Media files (User uploads)
+# Media Files (Using Cloudinary)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dykfnz7mx',          # From Cloudinary Dashboard
+    'API_KEY': '285684281658544',       # From Cloudinary Dashboard
+    'API_SECRET': 'Bqcf9oTBuBycMCut2qZJZZ1xGcc'  # Store this in .env for security
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
