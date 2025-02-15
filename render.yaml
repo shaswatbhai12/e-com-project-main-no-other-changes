@@ -2,10 +2,11 @@ services:
   - type: web
     name: django-app
     env: python
+    plan: free  # Added to ensure free tier usage
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     envVars:
       - key: DJANGO_SECRET_KEY
         value: 9h_#wy*6)%#ug3-uv@7xlryan5a36rqe^j5a$-i0@fo9szu=%n
       - key: ALLOWED_HOSTS
-        value: YOUR_DOMAIN_NAME,render.com
+        value: ".onrender.com"
