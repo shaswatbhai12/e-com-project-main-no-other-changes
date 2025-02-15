@@ -115,7 +115,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Security settings for production
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False  # Disabled to avoid redirect loop on Render
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
