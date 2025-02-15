@@ -118,7 +118,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'Bqcf9oTBuBycMCut2qZJZZ1xGcc'  # Store this in .env for security
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/shop/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Security settings for production
